@@ -1,0 +1,152 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Boston{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col">
+                <h1 class="align-middle">Modelo de predicción equipo LOS ERRESCUER</h1>
+            </div>
+        </div>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2> Valores de entrada </h2>
+                    <!-- CRIM	ZN	INDUS	CHAS	NOX	RM	AGE	DIS	RAD	TAX	PTRATIO	B	LSTAT	MEDV -->
+                    <div class="row">
+                        <div class="col-sm-6">
+                            {{ form.CRIM.label }}
+                        </div>
+                        <div class="col-sm-6">
+                            {{ form.CRIM() }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            {{ form.ZN.label }} 
+                        </div>
+                        <div class="col-sm-6">
+                            {{ form.ZN() }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            {{ form.INDUS.label }}
+                        </div>
+                        <div class="col-sm-6">
+                            {{ form.INDUS() }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            {{ form.CHAS.label }} 
+                        </div>
+                        <div class="col-sm-6">
+                            {{ form.CHAS() }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            {{ form.NOX.label }} 
+                        </div>
+                        <div class="col-sm-6">
+                            {{ form.NOX() }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            {{ form.RM.label }} 
+                        </div>
+                        <div class="col-sm-6">
+                            {{ form.RM() }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            {{ form.AGE.label }}
+                        </div>
+                        <div class="col-sm-6">
+                            {{ form.AGE() }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            {{ form.DIS.label }}
+                        </div>
+                        <div class="col-sm-6">
+                            {{ form.DIS() }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            {{ form.RAD.label }} 
+                        </div>
+                        <div class="col-sm-6">
+                            {{ form.RAD() }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            {{ form.TAX.label }} 
+                        </div>
+                        <div class="col-sm-6">
+                            {{ form.TAX() }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            {{ form.PTRATIO.label }} 
+                        </div>
+                        <div class="col-sm-6">
+                            {{ form.PTRATIO() }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            {{ form.B.label }} 
+                        </div>
+                        <div class="col-sm-6">
+                            {{ form.B() }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            {{ form.LSTAT.label }} 
+                        </div>
+                        <div class="col-sm-6">
+                            {{ form.LSTAT() }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            {{ form.submit() }}
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-sm-6">
+                    <h2> Predicción </h2>
+                    {{prediction}}
+                </div>
+            </div>
+            
+        </form>
+    </div>
+
+    <!-- <div class="container">
+        {{ wtf.quick_form(form) }}
+    </div> -->
+    
+    {% endblock %}
+</body>
+</html>
